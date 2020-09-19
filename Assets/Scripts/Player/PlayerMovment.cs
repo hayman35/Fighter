@@ -14,10 +14,15 @@ public class PlayerMovment : MonoBehaviour
     private float rotation_Speed = 15f;
 
     private void Awake() {
-        player_Animation = GetComponentInChildren<CharacterAnimation>();
         myBody = GetComponent<Rigidbody>();
+        player_Animation = GetComponentInChildren<CharacterAnimation>();
     }
 
+    void Update()
+    {
+        RotatePlayer();
+        AnimatedPlayerWalk();
+    }
     private void FixedUpdate() {
         DetectMovement();
     }
@@ -45,27 +50,17 @@ public class PlayerMovment : MonoBehaviour
 
     void AnimatedPlayerWalk()
     {
+        
         if (Input.GetAxisRaw(Axis.Horizontal_Axis) != 0 || 
             Input.GetAxisRaw(Axis.Vertical_Axis) != 0)
         {
-            //player_Animation.Walk(true);
-            player_Animation.Punch_1();
+            player_Animation.Walk(true);
+            
         }
         else
         {
-            //player_Animation.Walk(false);
+            player_Animation.Walk(false);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        RotatePlayer();
-        AnimatedPlayerWalk();
-    }
+ 
 }
