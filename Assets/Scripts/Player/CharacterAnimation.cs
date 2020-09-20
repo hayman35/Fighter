@@ -41,15 +41,51 @@ public class CharacterAnimation : MonoBehaviour
         animator.SetTrigger(AnimationTags.Kick_2_TRIGGER);
         
     }
-    // Start is called before the first frame update
-    void Start()
+
+    // ENEMY ANIMATIONS 
+
+    public void EnemyAttack(int attack)
     {
-        
+        if(attack == 0)
+        {
+            animator.SetTrigger(AnimationTags.Attack_1_Trigger);
+        }
+
+        if(attack == 1)
+        {
+            animator.SetTrigger(AnimationTags.Attack_2_Trigger);
+        }
+
+        if(attack == 2)
+        {
+            animator.SetTrigger(AnimationTags.Attack_3_Trigger);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Play_IdleAnimation()
     {
-        
+        animator.Play(AnimationTags.Idle_Animation);
     }
+
+    public void KnockDown()
+    {
+        animator.SetTrigger(AnimationTags.Knock_Down_Trigger);
+    }
+
+    public void Standup()
+    {
+        animator.SetTrigger(AnimationTags.Stand_up_Trigger);
+    }
+    
+    public void Hit()
+    {
+        animator.SetTrigger(AnimationTags.Hit_Trigger);
+    }
+
+    public void Death()
+    {
+        animator.SetTrigger(AnimationTags.Death_Trigger);
+    }
+
+   
 }
