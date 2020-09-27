@@ -31,9 +31,10 @@ public class Health : MonoBehaviour
             animationScript.Death();
             characterDied = true;
             
+            // if is player deactivate enemy script 
             if(is_Player)
             {
-                
+                GameObject.FindWithTag(Tags.Enemy_Tag).GetComponent<EnemyMovement>().enabled = false;
             }
             
             return;

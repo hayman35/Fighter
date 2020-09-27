@@ -140,7 +140,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     }
 
 
-    void DistableMovement()
+    void DisableMovement()
     {
         enemyMovement.enabled = false;
 
@@ -158,6 +158,15 @@ public class CharacterAnimationDelegate : MonoBehaviour
     }
 
 
+    void CharacterDied()
+    {
+        Invoke("DeactivateGameObject",2f);
+    }
+
+    void DeactivateGameObject()
+    {
+        gameObject.SetActive(false);
+    }
 
 
 
