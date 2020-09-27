@@ -9,7 +9,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     public float stand_Up_Timer = 2f;
 
-    private CharacterAnimation animation;
+    private CharacterAnimation animationScript;
 
     private AudioSource audioSource;
 
@@ -21,7 +21,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     private ShakeCamera shakeCamera;
 
     void Awake() {
-        animation = GetComponent<CharacterAnimation>();
+        animationScript = GetComponent<CharacterAnimation>();
 
         audioSource = GetComponent<AudioSource>();
 
@@ -109,7 +109,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     IEnumerator StandUpAfterTime()
     {
         yield return new WaitForSeconds(stand_Up_Timer);
-        animation.Standup();
+        animationScript.StandUp();
     }
     
 

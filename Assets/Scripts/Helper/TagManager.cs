@@ -19,7 +19,7 @@ public class AnimationTags
     public const string Idle_Animation = "Idle";
 
     public const string Knock_Down_Trigger = "KnockDown";
-    public const string Stand_up_Trigger = "Standup";
+    public const string Stand_up_Trigger = "StandUp";
     public const string Hit_Trigger = "Hit";
     public const string Death_Trigger = "Death";
 

@@ -33,8 +33,9 @@ public class Health : MonoBehaviour
             
             if(is_Player)
             {
-
+                
             }
+            
             return;
         }
         if(!is_Player)

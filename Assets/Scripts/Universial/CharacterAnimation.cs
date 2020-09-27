@@ -72,7 +72,7 @@ public class CharacterAnimation : MonoBehaviour
         animator.SetTrigger(AnimationTags.Knock_Down_Trigger);
     }
 
-    public void Standup()
+    public void StandUp()
     {
         animator.SetTrigger(AnimationTags.Stand_up_Trigger);
     }
