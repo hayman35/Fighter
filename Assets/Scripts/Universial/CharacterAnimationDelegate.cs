@@ -165,6 +165,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     void DeactivateGameObject()
     {
+        EnemyManager.instance.SpawnEnemy();
         gameObject.SetActive(false);
     }
 
