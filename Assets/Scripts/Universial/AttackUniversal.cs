@@ -60,6 +60,7 @@ public class AttackUniversal : MonoBehaviour
             if (is_Enemy)
             {
                 hit[0].GetComponent<Health>().ApplyDamage(damage,false);
+                
             } // is enemy 
 
             gameObject.SetActive(false);

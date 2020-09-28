@@ -8,15 +8,14 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField]
     private GameObject enemyPrefab;
-    private void Awake() {
+    void Awake() {
         if (instance == null)
         {instance = this;}
     }
 
-    private void Start() {
-        
+    void Start() {
+        SpawnEnemy();
     }
-
     public void SpawnEnemy()
     {
         Instantiate(enemyPrefab, transform.position, Quaternion.identity);
