@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\Universial\CharacterAnimation.cs" />
      <Compile Include="Assets\Scripts\Universial\CharacterAnimationDelegate.cs" />
      <Compile Include="Assets\Scripts\Universial\Health.cs" />
+     <Compile Include="Assets\Scripts\Universial\HealthUI.cs" />
      <None Include="Assets\Shaders\AdditiveTint.shader" />
      <None Include="Assets\Shaders\UnlitLightMapEmissive.shader" />
      <None Include="Assets\Shaders\UntilIlum.shader" />
