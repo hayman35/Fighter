@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walk_speed: 2
   z_Speed: 1.5
+  jumpForce: 5
 --- !u!114 &7819006806366502162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +453,8 @@ MonoBehaviour:
   fall_Sound: {fileID: 8300000, guid: b442013f0ba8dfc4496e165004621c1c, type: 3}
   ground_Hit_Sound: {fileID: 8300000, guid: 502104e7f036e1347ad18c1388b5ba42, type: 3}
   dead_Sound: {fileID: 8300000, guid: 191a876640aa7744eab67e02723512b6, type: 3}
+  jump_Sound: {fileID: 8300000, guid: 9948fe7fce56c194488c4e3fe6175da4, type: 3}
+  Hit_Sound: {fileID: 8300000, guid: c6e076d78b211334ab06e50e8f61bb95, type: 3}
 --- !u!1001 &353482362318419243
 PrefabInstance:
   m_ObjectHideFlags: 0

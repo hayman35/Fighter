@@ -1,25 +1,26 @@
-﻿using System.Collections;
+﻿using System.Net.Mime;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
 
     public float health = 100f;
-
     private CharacterAnimation animationScript;
     private EnemyMovement enemyMovement;
 
     private bool characterDied;
     public bool is_Player;
 
-    private HealthUI health_UI;
+    //private HealthUI health_UI;
+    private Image enemy_Health_UI,health_UI;
+
     void Awake() {
         animationScript = GetComponentInChildren<CharacterAnimation>();
-        if(is_Player)
-        {
-        health_UI = GetComponent<HealthUI>();
-        }
+        enemy_Health_UI = GameObject.FindWithTag(Tags.Enemy_Health_UI).GetComponent<Image>();
+        health_UI = GameObject.FindWithTag(Tags.Health_UI).GetComponent<Image>();
     }
 
     public void ApplyDamage(float damage, bool knockDown)
@@ -29,12 +30,15 @@ public class Health : MonoBehaviour
 
         health -= damage;
 
-        // dsiplay health UI
         if(is_Player)
         {
-        health_UI.DisplayHealth(health);
+            DisplayHealthPlayer(health);
         }
-        
+        else
+        {
+            DisplayHealthEnemy(health);
+        }
+
         if(health <= 0f)
         {
             animationScript.Death();
@@ -50,6 +54,7 @@ public class Health : MonoBehaviour
         }
         if(!is_Player)
             {
+                
                 if(knockDown)
                 {
                     if(Random.Range(0,2) > 0)
@@ -65,8 +70,24 @@ public class Health : MonoBehaviour
                 } // if its player
             }
         
-
-
-
     } // apply damage
+
+    public void DisplayHealthEnemy(float value)
+{
+    value /= 100f;
+    if(value < 0f)
+    {value =0f;}
+
+    enemy_Health_UI.fillAmount = value;
+}
+
+public void DisplayHealthPlayer(float value)
+{
+    value /= 100f;
+    if(value < 0f)
+    {value =0f;}
+
+    health_UI.fillAmount = value;
+}
+
 } // class

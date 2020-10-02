@@ -43,7 +43,7 @@ public class AttackUniversal : MonoBehaviour
                     hitFx_Pos.x -= 0.3f;
                 }
                 
-                Instantiate(hit_FX_Prefab,hitFx_Pos,Quaternion.identity);
+                hit_FX_Prefab = Instantiate(hit_FX_Prefab,hitFx_Pos,Quaternion.identity);
 
                 if(gameObject.CompareTag(Tags.Left_Arm_Tag) ||
                 gameObject.CompareTag(Tags.Left_Leg_Tag))
@@ -54,17 +54,31 @@ public class AttackUniversal : MonoBehaviour
                     hit[0].GetComponent<Health>().ApplyDamage(damage,false);
                 }
 
-
             } // if its player
 
             if (is_Enemy)
             {
+                Vector3 hitFx_Pos = hit[0].transform.position;
+                hitFx_Pos.y += 1.3f;
+
+                if(hit[0].transform.forward.x > 0)
+                {
+                    hitFx_Pos.x += 0.3f;
+                } else if(hit[0].transform.forward.x < 0)
+                {
+                    hitFx_Pos.x -= 0.3f;
+                }
+                
+                hit_FX_Prefab = Instantiate(hit_FX_Prefab,hitFx_Pos,Quaternion.identity);
+
                 hit[0].GetComponent<Health>().ApplyDamage(damage,false);
                 
+                  
             } // is enemy 
-
+            
             gameObject.SetActive(false);
-
+            
         } // if we have a hit 
     } // detect collision
+    
 } // class 

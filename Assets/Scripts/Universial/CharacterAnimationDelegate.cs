@@ -14,7 +14,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField]
-    private AudioClip whoosh_Sound, fall_Sound, ground_Hit_Sound, dead_Sound;
+    private AudioClip whoosh_Sound, fall_Sound, ground_Hit_Sound, dead_Sound,jump_Sound,Hit_Sound;
 
     private EnemyMovement enemyMovement;
 
@@ -119,6 +119,20 @@ public class CharacterAnimationDelegate : MonoBehaviour
         audioSource.clip = whoosh_Sound;
         audioSource.Play();
     }
+
+    public void Jump_FX_Sound()
+    {
+        audioSource.volume = 0.2f;
+        audioSource.clip = jump_Sound;
+        audioSource.Play();
+    }
+
+    public void Attack_Hit_FX_Sound()
+    {
+        audioSource.volume = 0.2f;
+        audioSource.clip = Hit_Sound;
+        audioSource.Play();
+    }
     
     void CharacterDiedSound()
     {
@@ -168,8 +182,6 @@ public class CharacterAnimationDelegate : MonoBehaviour
         EnemyManager.instance.SpawnEnemy();
         gameObject.SetActive(false);
     }
-
-
 
 
 } // class

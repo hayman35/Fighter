@@ -21,6 +21,12 @@ public class CharacterAnimation : MonoBehaviour
         animator.SetTrigger(AnimationTags.Punch_1_TRIGGER);
         
     }
+
+    public void Jump()
+    {
+        animator.SetTrigger(AnimationTags.Jump_Animation);
+        
+    }
      public void Punch_2()
     {
         animator.SetTrigger(AnimationTags.Punch_2_TRIGGER);
